@@ -21,10 +21,10 @@
     width: 300px;
     height: 400px;
     position: absolute;
-    bottom: 50px;
-    right: 50px;
-    z-index: -1;
-    background-color: #2591b3;
+    bottom: 117px;
+    right: 70px;
+    /* z-index: -1; */
+    background-color: #4797af;
     /* border: 1px solid #0081a8; */
     border-radius: 20px;
     padding-top: 10px;
@@ -48,9 +48,11 @@
   .popUpInput {
     margin: 0;
     padding: 15px;
-    width: 220px;
+    width: 270px;
+    /* width: inherit; */
     /* border-radius: 5px; */
     border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
     background-color: #eef5f8;
     color: #007fbf;
     /* border: 1px solid #007fbf ; */
