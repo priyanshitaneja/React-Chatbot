@@ -21,13 +21,20 @@
     width: 300px;
     height: 400px;
     position: absolute;
-    bottom: 117px;
+    bottom: 125px;
     right: 70px;
     /* z-index: -1; */
     background-color: #4797af;
     /* border: 1px solid #0081a8; */
     border-radius: 20px;
-    padding-top: 10px;
+    /* padding-top: 10px; */
+  }
+
+  .botHeader {
+    padding: 10px;
+    height: 20px;
+    border-bottom: 1px solid #eef5f8;
+    /* background-color: #eef5f8; */
   }
   
   .closeIcon {
@@ -35,14 +42,29 @@
     position: absolute;
     right: 10px;
   }
+
+  .chatArea {
+    margin: 0;
+    margin-top: 20px;
+    /* padding-top: 10px; */
+    height: 320px;
+    /* overflow: scroll; */
+    overflow-x:hidden;
+    overflow-y:scroll;
+  }
   
   .popUpMsg {
-    margin-left: 20px;
+    margin: 10px 20px;
     padding: 15px;
-    width: 180px;
+    width: 60%;
     border-radius: 15px;
     background-color: #eef5f8;
     color: #007fbf;
+    text-align: justify;
+
+    word-wrap: break-word;
+    /* such that the text doesn't break out  */
+    
   }
   
   .popUpInput {
@@ -62,4 +84,33 @@
   }
   
   
-  
+  @media (min-width: 320px) and (max-width:500px) {
+    /* bot window */
+    .BotWindow {
+      width: 100%;
+      height: 100vh;
+      position: relative;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 1;
+
+    }
+    .chatArea {
+      width: inherit;
+      height: 80%;
+      /* height: 80%; */
+      position: absolute;
+      top: 40px;
+      /* bottom: 40px; */
+    }
+    /* .botlogo {
+      z-index: -1;
+    } */
+
+    .popUpInput {
+      width: inherit;
+    }
+
+  }
