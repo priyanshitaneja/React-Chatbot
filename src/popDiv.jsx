@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import "./styles.css";
+import UserMsg from "./userMsg";
 import HighlightOffIcon from '@material-ui/icons/HighlightOff';
 
-const message=[
+
+
+const botMessage=[
   {id: 1, text: "Hi, How can I help you today?"}, 
   {id:2, text: "Are you looking for?"},
   {id:3, text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "},
@@ -14,13 +17,32 @@ const message=[
   {id:9, text: "Any random text zhxbikhsxokhnkxhnkiaqbxkqbakxhbqklxhakbhxloa"}
 ];
 
+// const userMsg = [];
+
 function PopDiv () {
 
   const [close, closeBot]= useState(false);
 
+  const [inputText, setInputText] = useState("");
+  const [msg, sendMsg]=useState([]);
+
   function handleClick() {
     closeBot(true);
   }
+
+  function handleChange(event) {
+    const newValue = event.target.value;
+    setInputText(newValue);
+  }
+
+  function handleSend() {
+    sendMsg(prevMsg => {
+      return [...prevMsg, inputText];
+    });
+    setInputText("");
+  }
+
+  // const classes = useStyles();
 
   return (
     <div className="BotWindow" style={{ display : close ? "none" : null}}>
@@ -34,7 +56,7 @@ function PopDiv () {
 
 
     <div class="chatArea">  
-      {message.map(function(item){
+      {botMessage.map(function(item){
         return (
             <p class="popUpMsg" key={item.id}>          
              {item.text}
@@ -42,13 +64,30 @@ function PopDiv () {
         )
       })};
 
+      {msg.map(function(message){
+        return (
+            <UserMsg
+            text={message} />
+        )
+      })};
+
     </div>
       
+    <div class="inputArea"> 
       <input 
         class="popUpInput" 
         type="text" 
-        placeholder="Type your query here . . ."
-      />
+        placeholder="Type your query here . . ." 
+        value={inputText}
+        onChange={handleChange}
+        />
+
+      <button class="sendBtn" onClick={handleSend}>
+        Send
+      </button>
+    </div>
+        
+      
 
        {/* { close ? null : <PopDiv />}  */}
 
