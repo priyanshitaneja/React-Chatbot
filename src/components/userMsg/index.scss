@@ -1,23 +1,16 @@
 @import '../../data/styles/colors.scss';
-
-.popUpMsg {
-    margin: 0 20px 10px 20px;
-    padding: 15px;
-    width: 60%;
-    border-radius: 15px;
-    background-color: #eef5f8;
-    color: #000;
-    text-align: justify;
-  
-    word-wrap: break-word;
-    /* such that the text doesn't break out  */
-  
-  }
+@import '../../data/styles/styles.scss';
 
   
   .userMsg {
     float: right;
-    margin-top: 0;
-    margin-bottom: 20px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    background-color: $user-msg-bg;
+  
+    clear: both;
+    //messages in next line irrespective of width
+    width: max-content;
+    //messages dynamic according to size of content
   }
   

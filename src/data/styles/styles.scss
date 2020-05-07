@@ -14,3 +14,21 @@ body {
   letter-spacing: 1px;
 }
 
+
+.popUpMsg {
+  margin: 8px 20px;
+  padding: 15px;
+ 
+  max-width: 60%;
+  // display: inline-block;
+  // width: max-content;
+  align-items: flex-start;
+  border-radius: 15px;
+  background-color: #eef5f8;
+  color: #000;
+  text-align: justify;
+
+  word-wrap: break-word;
+  /* such that the text doesn't break out  */
+
+}

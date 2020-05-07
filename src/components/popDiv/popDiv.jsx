@@ -37,6 +37,17 @@ function PopDiv() {
   useEffect(scrollToBottom, [msgs]);
   //used the useEffect hook so that the scrollToBottom is called after every new msg is sent
 
+  const handleChange = (event) => {
+    const newValue = event.target.value;
+    setInputText(newValue);
+  };
+
+  const handleEnter = (event) => {
+    if (event.key === "Enter") {
+       console.log("enter pressed");
+    }
+};
+
   return (
     <div className="BotWindow" style={{ display: close ? "none" : null }}>
       <div className="botHeader">
@@ -71,12 +82,10 @@ function PopDiv() {
         <input
           className="popUpInput"
           type="text"
-          placeholder="Type your query here . . ."
+          placeholder="Send your query here..."
           value={inputText}
-          onChange={(event) => {
-            const newValue = event.target.value;
-            setInputText(newValue);
-          }}
+          onChange={handleChange}
+          onKeyPress={handleEnter}
           required
         />
 
@@ -97,7 +106,7 @@ function PopDiv() {
 
       {/* { close ? null : <PopDiv />}  */}
     </div>
-  );
+  )
 }
 
 export default PopDiv;
