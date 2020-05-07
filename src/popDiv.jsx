@@ -7,26 +7,21 @@ import HighlightOffIcon from '@material-ui/icons/HighlightOff';
 
 const botMessage = [
   { id: 1, text: "Hi, How can I help you today?" },
-  { id: 2, text: "Are you looking for?" },
-  { id: 3, text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. " },
-  { id: 4, text: "abcdefghijklmnopqrstuvwxyz" },
-  { id: 5, text: "I am your virtual help bot" },
-  { id: 6, text: "Want to connect to an agent" },
-  { id: 7, text: "lorem ipsum 5" },
-  { id: 8, text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. " },
-  { id: 9, text: "Any random text zhxbikhsxokhnkxhnkiaqbxkqbakxhbqklxhakbhxloa" }
+  { id: 2, text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. " },
+  { id: 3, text: "I am your virtual help bot" },
+  { id: 4, text: "Want to connect to an agent" },
 ];
 
-// const userMsg = [];
 
 function PopDiv() {
 
   const [close, closeBot] = useState(false);
 
+  // const [botMsg, setBotMsg]= useState(["Hi, How can I help you today?","I am your virtual help bot"]);
   const [inputText, setInputText] = useState("");
   const [msg, sendMsg] = useState([]);
 
-  const chatbodyRef = useRef()
+  const chatbodyRef = useRef();
 
   function handleClick() {
     closeBot(true);
@@ -38,10 +33,11 @@ function PopDiv() {
   }
 
   function handleSend() {
-    chatbodyRef.current.scrollIntoView({ behavior: 'smooth' })
+    chatbodyRef.current.scrollIntoView({ behavior: 'smooth' });
     sendMsg(prevMsg => {
       return [...prevMsg, inputText];
     });
+    
     setInputText("");
     
   }
@@ -68,10 +64,10 @@ function PopDiv() {
           )
         })};
 
-      {msg.map(function (message) {
+      {msg.map(function (item) {
           return (
             <UserMsg
-              text={message} />
+              text={item} />
           )
         })};
 

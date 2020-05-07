@@ -61,7 +61,6 @@
     background-color: #eef5f8;
     color: #000;
     text-align: justify;
-
     word-wrap: break-word;
     /* such that the text doesn't break out  */
     
@@ -69,11 +68,14 @@
 
   .inputArea {
     margin: 0;
-    padding: 7px 15px;
-    width: 270px;
+    padding: 10px 15px;
+    padding-right: 25%;
+    /* width: 270px; */
     border: 0;
     position: absolute;
     bottom: 0;
+    left:0;
+    right:0;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
     background-color: #eef5f8;
@@ -81,9 +83,11 @@
   }
   
   .popUpInput {
+    width: 100%;
     border: none;
     background-color: #eef5f8;
-    padding: 5px 15px;
+    padding: 5px 0;
+    
   }
 
   .userMsg {
@@ -99,8 +103,10 @@
     color: #eef5f8;
     background-color: #4797af;
     padding: 5px 10px;
-    float: right;
+    /* float: right; */
     position: absolute;
+    right: 10px;
+    bottom: 10px;
     
   }
   
@@ -116,6 +122,7 @@
       left: 0;
       right: 0;
       z-index: 1;
+      border-radius: 0;
 
     }
     .chatArea {
@@ -129,11 +136,12 @@
     } */
 
     .inputArea {
-      width: inherit;
+      /* width: inherit; */
+      border-radius: 0;
     }
 
     .sendBtn{
-      right: 12%;
+      /* right: 12%; */
     }
 
   }
