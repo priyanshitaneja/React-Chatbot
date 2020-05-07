@@ -54,7 +54,7 @@
   }
   
   .popUpMsg {
-    margin: 10px 20px;
+    margin: 0 20px 10px 20px;
     padding: 15px;
     width: 60%;
     border-radius: 15px;
@@ -87,12 +87,14 @@
     border: none;
     background-color: #eef5f8;
     padding: 5px 0;
+
     
   }
 
   .userMsg {
     float: right;
     margin-top: 0;
+    margin-bottom: 20px;
   }
 
   .sendBtn {
