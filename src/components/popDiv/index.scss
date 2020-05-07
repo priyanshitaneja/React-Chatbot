@@ -6,6 +6,7 @@
     position: fixed;
     bottom: 20px;
     right: 20px;
+    box-shadow: 2px 5px 4px 0 rgba(0,0,0,.25);
 }
 
 .BotWindow {
@@ -16,6 +17,7 @@
     right: 70px;
     background-color: $bot-body;
     border-radius: 20px;
+    box-shadow: 0 5px 40px 0 rgba(0,0,0,.20);
 }
 
 .botHeader {
