@@ -56,15 +56,15 @@ function PopDiv() {
 
   return (
     <div className="BotWindow" style={{ display: close ? "none" : null }}>
-      <div class="botHeader">
+      <div className="botHeader">
         <p>Chatbot</p>
         <HighlightOffIcon className="closeIcon" onClick={handleClick} />
       </div>
 
-      <div class="chatArea">
+      <div className="chatArea">
         {botMessage.map(function (item) {
           return (
-            <p class="popUpMsg" key={item.id}>
+            <p className="popUpMsg" key={item.id}>
               {item.text}
             </p>
           );
@@ -78,10 +78,10 @@ function PopDiv() {
         {/* Scroll to bottom Reference */}
       </div>
 
-      <div class="inputArea">
+      <div className="inputArea">
         {/* <form> */}
         <input
-          class="popUpInput"
+          className="popUpInput"
           type="text"
           placeholder="Type your query here . . ."
           value={inputText}
@@ -89,7 +89,7 @@ function PopDiv() {
           required
         />
 
-        <button class="sendBtn" onClick={handleSend}>
+        <button className="sendBtn" onClick={handleSend}>
           Send
         </button>
         {/* </form> */}
