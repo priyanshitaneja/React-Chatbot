@@ -1,32 +1,36 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./styles.css";
 import UserMsg from "./userMsg";
-import HighlightOffIcon from '@material-ui/icons/HighlightOff';
-
-
+import HighlightOffIcon from "@material-ui/icons/HighlightOff";
 
 const botMessage = [
   { id: 1, text: "Hi, How can I help you today?" },
-  { id: 2, text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. " },
+  {
+    id: 2,
+    text:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+  },
   { id: 3, text: "I am your virtual help bot" },
-  { id: 4, text: "Want to connect to an agent"}
+  { id: 4, text: "Want to connect to an agent" },
 ];
 
-
 function PopDiv() {
-
   const [close, closeBot] = useState(false);
 
   // const [botMsg, setBotMsg]= useState(["Hi, How can I help you today?","I am your virtual help bot"]);
+
+  //saving the text of input area
   const [inputText, setInputText] = useState("");
+
+  //for messages the user sends
   const [msgs, setMsgs] = useState([]);
 
   const chatbodyRef = useRef();
   //reference created
 
   const scrollToBottom = () => {
-    chatbodyRef.current.scrollIntoView({ behavior: 'smooth' });
-  }
+    chatbodyRef.current.scrollIntoView({ behavior: "smooth" });
+  };
   //scrollToBottom function
 
   useEffect(scrollToBottom, [msgs]);
@@ -42,74 +46,58 @@ function PopDiv() {
   }
 
   function handleSend() {
-    
-    setMsgs(prevMsg => {
+    setMsgs((prevMsg) => {
       return [...prevMsg, inputText];
     });
-    
+
     setInputText("");
     // scrollToBottom();
-    
   }
-
-  // const classes = useStyles();
 
   return (
     <div className="BotWindow" style={{ display: close ? "none" : null }}>
-
       <div class="botHeader">
-        <HighlightOffIcon
-          className="closeIcon"
-          onClick={handleClick}
-        />
+        <p>Chatbot</p>
+        <HighlightOffIcon className="closeIcon" onClick={handleClick} />
       </div>
 
-
-      <div  class="chatArea">
+      <div class="chatArea">
         {botMessage.map(function (item) {
           return (
             <p class="popUpMsg" key={item.id}>
               {item.text}
             </p>
-          )
-        })};
-
-      {msgs.map(function (item) {
-          return (
-            <UserMsg
-              text={item} />
-          )
-        })};
-
+          );
+        })}
+        ;
+        {msgs.map(function (item) {
+          return <UserMsg text={item} />;
+        })}
+        ;
         <div ref={chatbodyRef} />
         {/* Scroll to bottom Reference */}
-
-    </div>
-    
+      </div>
 
       <div class="inputArea">
         {/* <form> */}
-          <input
-            class="popUpInput"
-            type="text"
-            placeholder="Type your query here . . ."
-            value={inputText}
-            onChange={handleChange}
-            required
-          />
+        <input
+          class="popUpInput"
+          type="text"
+          placeholder="Type your query here . . ."
+          value={inputText}
+          onChange={handleChange}
+          required
+        />
 
-          <button class="sendBtn" onClick={handleSend}>
-            Send
-          </button>
+        <button class="sendBtn" onClick={handleSend}>
+          Send
+        </button>
         {/* </form> */}
       </div>
 
-
-
       {/* { close ? null : <PopDiv />}  */}
-
     </div>
-  )
-};
+  );
+}
 
 export default PopDiv;
