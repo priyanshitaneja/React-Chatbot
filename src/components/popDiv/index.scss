@@ -87,7 +87,13 @@
     background-color: #eef5f8;
     padding: 10px 0;
     font-size: 14px;
+    box-shadow: 0;
   }
+
+.popUpInput:focus {
+    outline: none;
+    // removed shadow from input on focus
+}
   
   .sendBtn {
     width: 20%;
