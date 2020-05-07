@@ -23,11 +23,8 @@ body {
   position: absolute;
   bottom: 125px;
   right: 70px;
-  /* z-index: -1; */
   background-color: #074b50;
-  /* border: 1px solid #0081a8; */
   border-radius: 20px;
-  /* padding-top: 10px; */
 }
 
 .botHeader {
@@ -47,7 +44,6 @@ body {
 
 .closeIcon {
   color: #eef5f8;
-  
   position: absolute;
   right: 10px;
 }
@@ -70,6 +66,7 @@ body {
   background-color: #eef5f8;
   color: #000;
   text-align: justify;
+
   word-wrap: break-word;
   /* such that the text doesn't break out  */
 
@@ -99,7 +96,6 @@ body {
   background-color: #eef5f8;
   padding: 10px 0;
   font-size: 14px;
-  /* height: 100%; */
 }
 
 .userMsg {
@@ -147,12 +143,7 @@ body {
     top: 40px;
   }
 
-  /* .botlogo {
-      z-index: -1;
-    } */
-
   .inputArea {
-    /* width: inherit; */
     border-radius: 0;
   }
 
