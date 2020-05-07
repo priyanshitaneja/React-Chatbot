@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import "./styles.css";
+import "./styles.scss";
 import UserMsg from "./userMsg";
 import HighlightOffIcon from "@material-ui/icons/HighlightOff";
 

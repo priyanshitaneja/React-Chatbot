@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import botlogo from "./images/botlogo.jpg";
 import PopDiv from "./popDiv";
-import "./styles.css";
+import "./styles.scss";
 
 function App() {
   const [pop, setPop] = useState(false);
