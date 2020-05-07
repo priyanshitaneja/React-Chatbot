@@ -36,33 +36,18 @@ function PopDiv() {
   useEffect(scrollToBottom, [msgs]);
   //used the useEffect hook so that the scrollToBottom is called after every new msg is sent
 
-  function handleClick() {
-    closeBot(true);
-  }
-
-  function handleChange(event) {
-    const newValue = event.target.value;
-    setInputText(newValue);
-  }
-
-  function handleSend() {
-    setMsgs((prevMsg) => {
-      return [...prevMsg, inputText];
-    });
-
-    setInputText("");
-    // scrollToBottom();
-  }
-
   return (
     <div className="BotWindow" style={{ display: close ? "none" : null }}>
       <div className="botHeader">
         <p>Chatbot</p>
-        <HighlightOffIcon className="closeIcon" onClick={handleClick} />
+        <HighlightOffIcon
+          className="closeIcon"
+          onClick={() => closeBot(true)}
+        />
       </div>
 
       <div className="chatArea">
-        {botMessage.map(function (item) {
+        {botMessage.map((item) => {
           return (
             <p className="popUpMsg" key={item.id}>
               {item.text}
@@ -70,8 +55,10 @@ function PopDiv() {
           );
         })}
         ;
-        {msgs.map(function (item) {
-          return <UserMsg text={item} />;
+        {msgs.map((item, index) => {
+          return (
+            <UserMsg text={item} key={index} />
+          );
         })}
         ;
         <div ref={chatbodyRef} />
@@ -85,11 +72,23 @@ function PopDiv() {
           type="text"
           placeholder="Type your query here . . ."
           value={inputText}
-          onChange={handleChange}
+          onChange={(event) => {
+            const newValue = event.target.value;
+            setInputText(newValue);
+          }}
           required
         />
 
-        <button className="sendBtn" onClick={handleSend}>
+        <button
+          className="sendBtn"
+          onClick={() => {
+            setMsgs((prevMsg) => {
+              return [...prevMsg, inputText];
+            });
+            setInputText("");
+            // scrollToBottom();
+          }}
+        >
           Send
         </button>
         {/* </form> */}

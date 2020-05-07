@@ -4,7 +4,7 @@ import "./styles.css"
 function UserMsg(props) {
   return (
     <div>
-      <p class="popUpMsg userMsg">          
+      <p className="popUpMsg userMsg">          
           {props.text}
       </p>
     </div>    
