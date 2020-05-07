@@ -18,8 +18,8 @@
   }
   
   .BotWindow {
-    width: 300px;
-    height: 400px;
+    width: 370px;
+    height: 500px;
     position: absolute;
     bottom: 125px;
     right: 70px;
@@ -45,9 +45,9 @@
 
   .chatArea {
     margin: 0;
-    margin-top: 20px;
+    padding-top: 20px;
     /* padding-top: 10px; */
-    height: 305px;
+    height: 80%;
     /* overflow: scroll; */
     overflow-x:hidden;
     overflow-y:scroll;
