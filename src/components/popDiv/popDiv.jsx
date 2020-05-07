@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
-import "./styles.scss";
-import UserMsg from "./userMsg";
+import "../../data/styles/styles.scss";
+import "./index.scss";
+import UserMsg from "../userMsg/userMsg";
 import HighlightOffIcon from "@material-ui/icons/HighlightOff";
 
 const botMessage = [

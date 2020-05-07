@@ -1,0 +1,23 @@
+@import '../../data/styles/colors.scss';
+
+.popUpMsg {
+    margin: 0 20px 10px 20px;
+    padding: 15px;
+    width: 60%;
+    border-radius: 15px;
+    background-color: #eef5f8;
+    color: #000;
+    text-align: justify;
+  
+    word-wrap: break-word;
+    /* such that the text doesn't break out  */
+  
+  }
+
+  
+  .userMsg {
+    float: right;
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+  
