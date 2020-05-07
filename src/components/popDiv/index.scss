@@ -6,9 +6,9 @@
     position: fixed;
     bottom: 20px;
     right: 20px;
-  }
-  
-  .BotWindow {
+}
+
+.BotWindow {
     width: 370px;
     height: 75%;
     position: absolute;
@@ -16,30 +16,30 @@
     right: 70px;
     background-color: $bot-body;
     border-radius: 20px;
-  }
-  
-  .botHeader {
+}
+
+.botHeader {
     padding: 10px;
-    height: 20px;
+    height: 5%;
     border-bottom: 1px solid #eef5f8;
     color: #eef5f8;
     /* background-color: #eef5f8; */
-  }
-  
-  .botHeader p{
-    margin:0;
+}
+
+.botHeader p {
+    margin: 0;
     display: inline;
     padding-left: 10px;
-    font-size: 18px;
-  }
-  
-  .closeIcon {
+    font-size: 24px;
+}
+
+.closeIcon {
     color: #eef5f8;
     position: absolute;
     right: 10px;
-  }
-  
-  .chatArea {
+}
+
+.chatArea {
     margin: 0;
     padding-top: 20px;
     /* padding-top: 10px; */
@@ -47,9 +47,9 @@
     /* overflow: scroll; */
     overflow-x: hidden;
     overflow-y: scroll;
-  }
-  
-  .popUpMsg {
+}
+
+.popUpMsg {
     margin: 0 20px 10px 20px;
     padding: 15px;
     width: 60%;
@@ -57,13 +57,13 @@
     background-color: #eef5f8;
     color: #000;
     text-align: justify;
-  
+
     word-wrap: break-word;
     /* such that the text doesn't break out  */
-  
-  }
-  
-  .inputArea {
+
+}
+
+.inputArea {
     margin: 0;
     padding: 5px 15px;
     padding-right: 25%;
@@ -78,9 +78,9 @@
     border-bottom-right-radius: 15px;
     background-color: #eef5f8;
     color: #000;
-  }
-  
-  .popUpInput {
+}
+
+.popUpInput {
     /* margin: 10px 0; */
     width: 100%;
     border: none;
@@ -88,14 +88,14 @@
     padding: 10px 0;
     font-size: 14px;
     box-shadow: 0;
-  }
+}
 
 .popUpInput:focus {
     outline: none;
     // removed shadow from input on focus
 }
-  
-  .sendBtn {
+
+.sendBtn {
     width: 20%;
     z-index: 1;
     border: none;
@@ -107,35 +107,35 @@
     position: absolute;
     right: 10px;
     bottom: 10px;
-  
-  }
-  
-  
-  @media (min-width: 320px) and (max-width:500px) {
-  
+
+}
+
+
+@media (min-width: 320px) and (max-width:500px) {
+
     /* bot window */
     .BotWindow {
-      width: 100%;
-      height: 100vh;
-      position: relative;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      z-index: 1;
-      border-radius: 0;
-  
+        width: 100%;
+        height: 100vh;
+        position: relative;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 1;
+        border-radius: 0;
+
     }
-  
+
     .chatArea {
-      width: inherit;
-      height: 80%;
-      position: absolute;
-      top: 40px;
+        width: inherit;
+        height: 80%;
+        position: absolute;
+        top: 40px;
     }
-  
+
     .inputArea {
-      border-radius: 0;
+        border-radius: 0;
     }
-  
-  }
+
+}

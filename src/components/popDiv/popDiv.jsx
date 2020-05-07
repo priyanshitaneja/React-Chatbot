@@ -40,7 +40,7 @@ function PopDiv() {
   return (
     <div className="BotWindow" style={{ display: close ? "none" : null }}>
       <div className="botHeader">
-        <p>Chatbot</p>
+        <p>Chatbot P.T</p>
         <HighlightOffIcon
           className="closeIcon"
           onClick={() => closeBot(true)}
