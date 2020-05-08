@@ -2,7 +2,8 @@ import React, { useState, useEffect, useRef } from "react";
 import "../../data/styles/styles.scss";
 import "./index.scss";
 import UserMsg from "../userMsg/userMsg";
-// import HighlightOffIcon from "@material-ui/icons/HighlightOff";
+// import BotHeader from "../botHeader/botHeader";
+import HighlightOffIcon from "@material-ui/icons/HighlightOff";
 
 const botMessage = [
   { id: 1, text: "Hi, How can I help you today?" },
@@ -16,7 +17,7 @@ const botMessage = [
 ];
 
 function PopDiv() {
-  // const [close, closeBot] = useState(false);
+  const [close, closeBot] = useState(false);
 
   //saving the text of input area
   const [inputText, setInputText] = useState("");
@@ -40,24 +41,37 @@ function PopDiv() {
     setInputText(newValue);
   };
 
+  const handleSend = () => {
+    if(inputText.trim() !== "" && inputText.trim() !== null) {
+      setMsgs((prevMsg) => {
+        return [...prevMsg, inputText];
+      });
+      setInputText("");
+      // scrollToBottom();
+    }
+  };
+
   const handleEnter = (event) => {
-    if (event.key === "Enter") {
+    if (event.key === "Enter" && inputText.trim() !== "" && inputText.trim() !== null) {
        console.log("enter pressed");
+       handleSend();
     }
 };
 
   return (
     <div className="BotWindow" style={{ display: close ? "none" : null }}>
-      {/* <div className="botHeader">
+      <div className="botHeader">
         <p>Chatbot P.T</p>
         <HighlightOffIcon
           className="closeIcon"
           onClick={() => closeBot(true)}
         />
-      </div> */}
+      </div>
 
-      <div className="chatArea">
-        <img src={require("../../images/avatar.jpg")}  class="avatar" alt="avatar" />
+      {/* <BotHeader /> */}
+
+       <div className="chatArea">
+        <img src={require("../../images/avatar.jpg")}  className="avatar" alt="avatar" />
         {botMessage.map((item) => {
           return (
             <div className="botMsgArea" >
@@ -75,11 +89,11 @@ function PopDiv() {
         })}
         ;
         <div ref={chatbodyRef} />
-        {/* Scroll to bottom Reference */}
-      </div>
+        {/* Scroll to bottom Reference  */}
+      </div> 
 
       <div className="inputArea">
-        {/* <form> */}
+        
         <input
           className="popUpInput"
           type="text"
@@ -87,22 +101,15 @@ function PopDiv() {
           value={inputText}
           onChange={handleChange}
           onKeyPress={handleEnter}
-          required
         />
 
         <button
           className="sendBtn"
-          onClick={() => {
-            setMsgs((prevMsg) => {
-              return [...prevMsg, inputText];
-            });
-            setInputText("");
-            // scrollToBottom();
-          }}
+          onClick={handleSend}
         >
           Send
         </button>
-        {/* </form> */}
+        
       </div>
 
       {/* { close ? null : <PopDiv />}  */}
