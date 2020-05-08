@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import "../../data/styles/styles.scss";
 import "./index.scss";
 import UserMsg from "../userMsg/userMsg";
-import HighlightOffIcon from "@material-ui/icons/HighlightOff";
+// import HighlightOffIcon from "@material-ui/icons/HighlightOff";
 
 const botMessage = [
   { id: 1, text: "Hi, How can I help you today?" },
@@ -16,9 +16,7 @@ const botMessage = [
 ];
 
 function PopDiv() {
-  const [close, closeBot] = useState(false);
-
-  // const [botMsg, setBotMsg]= useState(["Hi, How can I help you today?","I am your virtual help bot"]);
+  // const [close, closeBot] = useState(false);
 
   //saving the text of input area
   const [inputText, setInputText] = useState("");
@@ -50,20 +48,23 @@ function PopDiv() {
 
   return (
     <div className="BotWindow" style={{ display: close ? "none" : null }}>
-      <div className="botHeader">
+      {/* <div className="botHeader">
         <p>Chatbot P.T</p>
         <HighlightOffIcon
           className="closeIcon"
           onClick={() => closeBot(true)}
         />
-      </div>
+      </div> */}
 
       <div className="chatArea">
+        <img src={require("../../images/avatar.jpg")}  class="avatar" alt="avatar" />
         {botMessage.map((item) => {
           return (
-            <p className="popUpMsg botMsg" key={item.id}>
-              {item.text}
-            </p>
+            <div className="botMsgArea" >
+              <p className="popUpMsg botMsg" key={item.id}>
+                {item.text}
+              </p>
+            </div>
           );
         })}
         ;
