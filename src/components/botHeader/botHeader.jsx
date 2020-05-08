@@ -4,12 +4,12 @@
 // import HighlightOffIcon from "@material-ui/icons/HighlightOff";
 
 // function BotHeader(props) {
-// //   const [close, closeBot] = useState(false);
+//   const [close, closeBot] = useState(false);
 
 //   return (
 //     <div className="botHeader">
 //       <p>Chatbot P.T</p>
-//       <HighlightOffIcon className="closeIcon" onClick={() => props.closeBot(true)} />
+//       <HighlightOffIcon className="closeIcon" onClick={() => closeBot(true)} />
 //     </div>
 //   );
 // }

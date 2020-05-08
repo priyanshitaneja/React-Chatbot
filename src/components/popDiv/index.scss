@@ -24,22 +24,50 @@
 .botHeader {
     box-sizing: border-box;
     padding: 12px;
-    height: 50px;
+    height: 65px;
     border-bottom: 1px solid #eef5f8;
     color: #eef5f8;
     background-color: $bot-body;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
+    display: inline-flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
 }
 
-.botHeader p {
+.avatarIcon {
+    width: 40px;
+    height: 40px;
+    border-radius: 25px;
+    margin-right: 20px;
+}
+
+.headerText {
     margin: 0;
-    display: inline;
-    padding-left: 10px;
-    font-size: 24px;
+    // display: inline;
+    // padding-left: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.onlineStatus {
+    align-items: bottom;
+    font-size: 12px;
+    margin: 0;
+    margin-top: 10px;
+    font-weight: 200;
+}
+
+.onlineIcon {
+    font-size: 10px !important;
+    margin-right: 10px;
+    color: rgb(37, 197, 37);
 }
 
 .closeIcon {
+    display: inline-block;
     color: #eef5f8;
     position: absolute;
     right: 10px;
@@ -47,18 +75,22 @@
 
 .chatArea {
     margin: 0;
-    padding-top: 20px;
+    position: absolute;
+    // left: 0;
+    // right: 0;
+    top: 65px;
+    bottom: 35px;
+    // padding-top: 20px;
     /* padding-top: 10px; */
-    height: 78%;
+    // height: 80%;
     /* overflow: scroll; */
     overflow-x: hidden;
     overflow-y: scroll;
     // background-color: $bot-body;
     background-image: url('../../images/bg.jpg');
-    background-position-x: center;
-    background-position-y: bottom;
+    background-position: 50% 50%;
     background-repeat: no-repeat;
-    // background-size: auto;
+    background-size: cover;
     // background-blend-mode: hard-light;
 }
 
@@ -69,10 +101,10 @@
     // height: 50px;
     padding: 10px;
     margin-top: 10px;
-    border-radius: 30px;
+    border-radius: 35px;
 
     position: absolute;
-    top: 40px;
+    top: -10px;
 }
 
 .botMsgArea {
@@ -83,7 +115,7 @@
     margin: 0;
     padding: 5px 15px;
     padding-right: 25%;
-    /* height: 10%; */
+    height: 35px;
     /* width: 270px; */
     position: absolute;
     bottom: 0;
@@ -156,14 +188,11 @@
         padding-bottom: 12px;
     }
 
-    .botHeader p {
-        padding: 15px;
-    }
-
     .chatArea {
         width: inherit;
         position: absolute;
-        // top: 40px;
+        top: 65px;
+        // bottom: 35px;
     }
 
     .inputArea {

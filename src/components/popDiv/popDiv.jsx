@@ -4,6 +4,7 @@ import "./index.scss";
 import UserMsg from "../userMsg/userMsg";
 // import BotHeader from "../botHeader/botHeader";
 import HighlightOffIcon from "@material-ui/icons/HighlightOff";
+import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
 
 const botMessage = [
   { id: 1, text: "Hi, How can I help you today?" },
@@ -61,11 +62,23 @@ function PopDiv() {
   return (
     <div className="BotWindow" style={{ display: close ? "none" : null }}>
       <div className="botHeader">
-        <p>Chatbot P.T</p>
-        <HighlightOffIcon
-          className="closeIcon"
-          onClick={() => closeBot(true)}
-        />
+        
+            <img 
+              src={require("../../images/avatar.jpg")} 
+              className="avatarIcon" 
+              alt="Avatar Icon">
+            </img> 
+            <div >
+              <p class="headerText">Chatbot P.T</p>
+              <p className="onlineStatus"><FiberManualRecordIcon className="onlineIcon" />
+                Online
+              </p>
+            </div>
+            <HighlightOffIcon
+              className="closeIcon"
+              onClick={() => closeBot(true)}
+            />
+        
       </div>
 
       {/* <BotHeader /> */}
