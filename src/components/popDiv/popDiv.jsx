@@ -61,7 +61,7 @@ function PopDiv() {
       <div className="chatArea">
         {botMessage.map((item) => {
           return (
-            <p className="popUpMsg" key={item.id}>
+            <p className="popUpMsg botMsg" key={item.id}>
               {item.text}
             </p>
           );

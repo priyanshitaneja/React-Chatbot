@@ -16,17 +16,20 @@
     position: absolute;
     bottom: 125px;
     right: 70px;
-    background-color: $bot-body;
+    box-sizing: border-box;
     border-radius: 20px;
     box-shadow: 0 5px 40px 0 rgba(0,0,0,.20);
 }
 
 .botHeader {
+    box-sizing: border-box;
     padding: 12px;
-    height: 5%;
+    height: 50px;
     border-bottom: 1px solid #eef5f8;
     color: #eef5f8;
-    /* background-color: #eef5f8; */
+    background-color: $bot-body;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
 }
 
 .botHeader p {
@@ -46,10 +49,17 @@
     margin: 0;
     padding-top: 20px;
     /* padding-top: 10px; */
-    height: 78%;
+    height: 80%;
     /* overflow: scroll; */
     overflow-x: hidden;
     overflow-y: scroll;
+    // background-color: $bot-body;
+    background-image: url('../../images/bg.jpg');
+    background-position-x: center;
+    background-position-y: bottom;
+    background-repeat: no-repeat;
+    // background-size: auto;
+    // background-blend-mode: hard-light;
 }
 
 .inputArea {
@@ -66,20 +76,27 @@
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
     background-color: #eef5f8;
-    color: $user-msg;
+
+}
+
+.botMsg {
+    opacity: 00.95;
 }
 
 .popUpInput {
     /* margin: 10px 0; */
     width: 100%;
     border: none;
-    background-color: #eef5f8;
+    
+    background-color: $bot-msg;
     padding: 10px 0;
     font-size: 14px;
     box-shadow: 0;
+    // opacity: 0.1;
 }
 
 .popUpInput:focus {
+    // color: $user-msg;
     outline: none;
     // removed shadow from input on focus
 }
@@ -112,15 +129,24 @@
         left: 0;
         right: 0;
         z-index: 1;
-        border-radius: 0;
+        // border-radius: 0;
 
+    }
+
+    .botHeader {
+        box-sizing: border-box;
+        border-radius: 0;
+        padding-bottom: 12px;
+    }
+
+    .botHeader p {
+        padding: 15px;
     }
 
     .chatArea {
         width: inherit;
-        height: 80%;
         position: absolute;
-        top: 40px;
+        // top: 40px;
     }
 
     .inputArea {

@@ -24,8 +24,9 @@ body {
   // width: max-content;
   align-items: flex-start;
   border-radius: 15px;
-  background-color: #eef5f8;
-  color: #000;
+  background-color: $bot-msg-bg;
+  
+  color: $bot-msg;
   text-align: justify;
 
   word-wrap: break-word;
