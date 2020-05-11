@@ -7,14 +7,8 @@ import HighlightOffIcon from "@material-ui/icons/HighlightOff";
 import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
 
 const botMessage = [
-  { id: 1, text: "Hi, How can I help you today?" },
-  {
-    id: 2,
-    text:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
-  },
-  { id: 3, text: "I am your virtual help bot" },
-  { id: 4, text: "Want to connect to an agent" },
+  { id: 1, text: "Hi, I am your virtual help bot." },
+  { id: 2, text: "How can I help you today?" }
 ];
 
 function PopDiv() {
