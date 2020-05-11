@@ -58,7 +58,7 @@ function PopDiv() {
       <div className="botHeader">
         
             <img 
-              src={require("../../images/avatar.jpg")} 
+              src={require("../../data/assets/images/avatar.jpg")} 
               className="avatarIcon" 
               alt="Avatar Icon">
             </img> 
@@ -78,7 +78,7 @@ function PopDiv() {
       {/* <BotHeader /> */}
 
        <div className="chatArea">
-        <img src={require("../../images/avatar.jpg")}  className="avatar" alt="avatar" />
+        <img src={require("../../data/assets/images/avatar.jpg")}  className="avatar" alt="avatar" />
         {botMessage.map((item) => {
           return (
             <div className="botMsgArea" >
