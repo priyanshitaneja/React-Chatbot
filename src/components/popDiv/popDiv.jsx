@@ -22,12 +22,14 @@ function PopDiv() {
   const chatbodyRef = useRef();
   //reference created
 
-  const scrollToBottom = () => {
-    chatbodyRef.current.scrollIntoView({ behavior: "smooth" });
-  };
+  // const scrollToBottom = () => {
+  //   chatbodyRef.current.scrollIntoView({ behavior: "smooth" });
+  // };
   //scrollToBottom function
 
-  useEffect(() => {scrollToBottom()}, [msgs]);
+  useEffect(() => {
+    chatbodyRef.current.scrollIntoView({ behavior: "smooth" });
+  }, [msgs]);
   //used the useEffect hook so that the scrollToBottom is called after every new msg is sent
 
   const handleChange = (event) => {
