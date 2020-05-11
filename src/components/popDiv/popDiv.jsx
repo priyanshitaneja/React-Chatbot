@@ -13,7 +13,7 @@ import {botMessage} from "../../data/config/constants";
 
 
 function PopDiv() {
-  const [close, closeBot] = useState(false);
+  const [close, setClose] = useState(false);
 
   //saving the text of input area
   const [inputText, setInputText] = useState("");
@@ -71,7 +71,7 @@ function PopDiv() {
             </div>
             <HighlightOffIcon
               className="closeIcon"
-              onClick={() => closeBot(true)}
+              onClick={() => setClose(true)}
             />
         
       </div>

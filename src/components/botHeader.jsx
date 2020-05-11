@@ -6,7 +6,7 @@
     
 
 //     function handleClick() {
-//         closeBot(true);
+//         setClose(true);
 //       }
 
 //   return (
