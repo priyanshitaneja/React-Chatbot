@@ -6,14 +6,13 @@ import "./index.scss";
 import { avatar } from "../../data/assets/images/index.js";
 
 import UserMsg from "../userMsg/userMsg";
+import BotMessage from "../botMessage/BotMessage";
+import BotHeader from "../botHeader/BotHeader";
 
 import HighlightOffIcon from "@material-ui/icons/HighlightOff";
-import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecord";
 
-import { botMessage } from "../../data/config/constants";
-
-const PopDiv = () => {
-  const [close, setClose] = useState(false);
+const PopDiv = ({ setPop }, { pop }) => {
+  // const [close, setClose] = useState(false);
 
   const [inputText, setInputText] = useState("");
 
@@ -50,40 +49,12 @@ const PopDiv = () => {
   };
 
   return (
-    <div className="BotWindow" style={{ display: close ? "none" : null }}>
-      <div className="botHeader">
-        <img
-          src={avatar}
-          className="avatarIcon"
-          alt="Avatar Icon"
-        ></img>
-        <div>
-          <p class="headerText">Chatbot P.T</p>
-          <p className="onlineStatus">
-            <FiberManualRecordIcon className="onlineIcon" />
-            Online
-          </p>
-        </div>
-        <HighlightOffIcon
-          className="closeIcon"
-          onClick={() => setClose(true)}
-        />
-      </div>
+    <div className="BotWindow" style={{ display: pop ? "none" : null }}>
+      <HighlightOffIcon className="closeIcon" onClick={() => setPop(true)} />
+      <BotHeader />
       <div className="chatArea">
-        <img
-          src={avatar}
-          className="avatar"
-          alt="avatar"
-        />
-        {botMessage.map((item) => {
-          return (
-            <div className="botMsgArea">
-              <p className="popUpMsg botMsg" key={item.id}>
-                {item.text}
-              </p>
-            </div>
-          );
-        })}
+        <img src={avatar} className="avatar" alt="avatar" />
+        <BotMessage />
         {msgs.map((item, index) => (
           <UserMsg text={item} key={index} />
         ))}

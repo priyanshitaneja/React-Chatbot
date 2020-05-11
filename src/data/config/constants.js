@@ -1,4 +1,4 @@
-export const botMessage = [
+export const botMessages = [
     { id: 1, text: "Hi, I am your virtual help bot." },
     { id: 2, text: "How can I help you today?" },
     { id: 3, text: "Hi, I am your virtual help bot." },

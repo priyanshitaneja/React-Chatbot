@@ -1,16 +1,24 @@
-// import React from "react";
-// import "../../data/styles/common.scss";
-// import "./index.scss";
-// import HighlightOffIcon from "@material-ui/icons/HighlightOff";
+import React from "react";
 
-// function BotHeader(props) {
-//   const [close, setClose] = useState(false);
+import "../../data/styles/common.scss";
+import "./index.scss";
 
-//   return (
-//     <div className="botHeader">
-//       <p>Chatbot P.T</p>
-//       <HighlightOffIcon className="closeIcon" onClick={() => setClose(true)} />
-//     </div>
-//   );
-// }
-// export default BotHeader;
+import { avatar } from "../../data/assets/images/index.js";
+import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecord";
+
+function BotHeader(props) {
+
+  return (
+    <div className="botHeader">
+        <img src={avatar} className="avatarIcon" alt="Avatar Icon"></img>
+        <div>
+          <p className="headerText">Chatbot P.T</p>
+          <p className="onlineStatus">
+            <FiberManualRecordIcon className="onlineIcon" />
+            Online
+          </p>
+        </div>
+      </div>
+  );
+}
+export default BotHeader;

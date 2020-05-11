@@ -15,7 +15,7 @@ function App() {
   return (
     <div className="chatbotContainer">
       <img src={botlogo} alt="bot logo" className="botlogo" onClick={popUp} />
-      {pop ? <PopDiv /> : null}
+      {pop ? <PopDiv setPop= { setPop } pop= { pop } /> : null}
     </div>
   );
 }

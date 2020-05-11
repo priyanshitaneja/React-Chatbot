@@ -1,0 +1,55 @@
+@import "../../data/styles/colors.scss";
+
+.botHeader {
+    box-sizing: border-box;
+    padding: 12px;
+    height: 65px;
+    border-bottom: 1px solid #eef5f8;
+    color: #eef5f8;
+    background-color: $bot-body;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    display: inline-flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    .avatarIcon {
+        width: 40px;
+        height: 40px;
+        border-radius: 25px;
+        margin-right: 20px;
+    }
+
+    .headerText {
+        margin: 0;
+        // display: inline;
+        // padding-left: 10px;
+        font-size: 20px;
+        // font-weight: bold;
+    }
+    
+    .onlineStatus {
+        align-items: bottom;
+        font-size: 12px;
+        margin: 0;
+        margin-top: 10px;
+        font-weight: 200;
+    }
+    
+    .onlineIcon {
+        font-size: 10px !important;
+        margin-right: 10px;
+        color: rgb(37, 197, 37);
+    }
+    
+}
+
+@media (min-width: 320px) and (max-width:500px) {
+    .botHeader {
+        box-sizing: border-box;
+        border-radius: 0;
+        padding-bottom: 12px;
+    }
+}

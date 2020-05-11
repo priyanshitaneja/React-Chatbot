@@ -21,56 +21,13 @@
     box-shadow: 0 5px 40px 0 rgba(0,0,0,.20);
 }
 
-.botHeader {
-    box-sizing: border-box;
-    padding: 12px;
-    height: 65px;
-    border-bottom: 1px solid #eef5f8;
-    color: #eef5f8;
-    background-color: $bot-body;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    display: inline-flex;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-}
-
-.avatarIcon {
-    width: 40px;
-    height: 40px;
-    border-radius: 25px;
-    margin-right: 20px;
-}
-
-.headerText {
-    margin: 0;
-    // display: inline;
-    // padding-left: 10px;
-    font-size: 20px;
-    // font-weight: bold;
-}
-
-.onlineStatus {
-    align-items: bottom;
-    font-size: 12px;
-    margin: 0;
-    margin-top: 10px;
-    font-weight: 200;
-}
-
-.onlineIcon {
-    font-size: 10px !important;
-    margin-right: 10px;
-    color: rgb(37, 197, 37);
-}
-
 .closeIcon {
     display: inline-block;
     color: #eef5f8;
     position: absolute;
+    top: 10px;
     right: 10px;
+    z-index: 2;
 }
 
 .chatArea {
@@ -107,9 +64,6 @@
     top: -10px;
 }
 
-.botMsgArea {
-    padding-left: 60px;
-}
 
 .inputArea {
     margin: 0;
@@ -126,10 +80,6 @@
     border-bottom-right-radius: 15px;
     background-color: #eef5f8;
 
-}
-
-.botMsg {
-    opacity: 00.95;
 }
 
 .popUpInput {
