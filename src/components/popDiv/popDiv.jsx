@@ -4,13 +4,11 @@ import "../../data/styles/common.scss";
 import "./index.scss";
 
 import UserMsg from "../userMsg/userMsg";
-// import BotHeader from "../botHeader/botHeader";
 
 import HighlightOffIcon from "@material-ui/icons/HighlightOff";
-import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
+import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecord";
 
-import {botMessage} from "../../data/config/constants";
-
+import { botMessage } from "../../data/config/constants";
 
 function PopDiv() {
   const [close, setClose] = useState(false);
@@ -38,7 +36,7 @@ function PopDiv() {
   };
 
   const handleSend = () => {
-    if(inputText.trim() !== "" && inputText.trim() !== null) {
+    if (inputText.trim() !== "" && inputText.trim() !== null) {
       setMsgs((prevMsg) => {
         return [...prevMsg, inputText];
       });
@@ -48,41 +46,48 @@ function PopDiv() {
   };
 
   const handleEnter = (event) => {
-    if (event.key === "Enter" && inputText.trim() !== "" && inputText.trim() !== null) {
-       console.log("enter pressed");
-       handleSend();
+    if (
+      event.key === "Enter" &&
+      inputText.trim() !== "" &&
+      inputText.trim() !== null
+    ) {
+      // console.log("enter pressed");
+      handleSend();
     }
-};
+  };
 
   return (
     <div className="BotWindow" style={{ display: close ? "none" : null }}>
       <div className="botHeader">
-        
-            <img 
-              src={require("../../data/assets/images/avatar.jpg")} 
-              className="avatarIcon" 
-              alt="Avatar Icon">
-            </img> 
-            <div >
-              <p class="headerText">Chatbot P.T</p>
-              <p className="onlineStatus"><FiberManualRecordIcon className="onlineIcon" />
-                Online
-              </p>
-            </div>
-            <HighlightOffIcon
-              className="closeIcon"
-              onClick={() => setClose(true)}
-            />
-        
+        <img
+          src={require("../../data/assets/images/avatar.jpg")}
+          className="avatarIcon"
+          alt="Avatar Icon"
+        ></img>
+        <div>
+          <p class="headerText">Chatbot P.T</p>
+          <p className="onlineStatus">
+            <FiberManualRecordIcon className="onlineIcon" />
+            Online
+          </p>
+        </div>
+        <HighlightOffIcon
+          className="closeIcon"
+          onClick={() => setClose(true)}
+        />
       </div>
 
       {/* <BotHeader /> */}
 
-       <div className="chatArea">
-        <img src={require("../../data/assets/images/avatar.jpg")}  className="avatar" alt="avatar" />
+      <div className="chatArea">
+        <img
+          src={require("../../data/assets/images/avatar.jpg")}
+          className="avatar"
+          alt="avatar"
+        />
         {botMessage.map((item) => {
           return (
-            <div className="botMsgArea" >
+            <div className="botMsgArea">
               <p className="popUpMsg botMsg" key={item.id}>
                 {item.text}
               </p>
@@ -91,17 +96,14 @@ function PopDiv() {
         })}
         ;
         {msgs.map((item, index) => {
-          return (
-            <UserMsg text={item} key={index} />
-          );
+          return <UserMsg text={item} key={index} />;
         })}
         ;
         <div ref={chatbodyRef} />
         {/* Scroll to bottom Reference  */}
-      </div> 
+      </div>
 
       <div className="inputArea">
-        
         <input
           className="popUpInput"
           type="text"
@@ -110,19 +112,13 @@ function PopDiv() {
           onChange={handleChange}
           onKeyPress={handleEnter}
         />
-
-        <button
-          className="sendBtn"
-          onClick={handleSend}
-        >
+        <button className="sendBtn" onClick={handleSend}>
           Send
         </button>
-        
       </div>
-
       {/* { close ? null : <PopDiv />}  */}
     </div>
-  )
+  );
 }
 
 export default PopDiv;
