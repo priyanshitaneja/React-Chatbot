@@ -1,15 +1,16 @@
 import React, { useState, useEffect, useRef } from "react";
+
 import "../../data/styles/common.scss";
 import "./index.scss";
+
 import UserMsg from "../userMsg/userMsg";
 // import BotHeader from "../botHeader/botHeader";
+
 import HighlightOffIcon from "@material-ui/icons/HighlightOff";
 import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
 
-const botMessage = [
-  { id: 1, text: "Hi, I am your virtual help bot." },
-  { id: 2, text: "How can I help you today?" }
-];
+import {botMessage} from "../../data/config/constants";
+
 
 function PopDiv() {
   const [close, closeBot] = useState(false);
