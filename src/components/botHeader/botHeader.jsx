@@ -1,5 +1,5 @@
 // import React from "react";
-// import "../../data/styles/styles.scss";
+// import "../../data/styles/common.scss";
 // import "./index.scss";
 // import HighlightOffIcon from "@material-ui/icons/HighlightOff";
 

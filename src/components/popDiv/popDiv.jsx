@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import "../../data/styles/styles.scss";
+import "../../data/styles/common.scss";
 import "./index.scss";
 import UserMsg from "../userMsg/userMsg";
 // import BotHeader from "../botHeader/botHeader";
