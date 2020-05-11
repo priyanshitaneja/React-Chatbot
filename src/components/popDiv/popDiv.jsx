@@ -11,11 +11,9 @@ import BotHeader from "../botHeader/BotHeader";
 
 import HighlightOffIcon from "@material-ui/icons/HighlightOff";
 
-const PopDiv = ({ setPop }, { pop }) => {
-  // const [close, setClose] = useState(false);
+const PopDiv = ({ setPop } , { pop }) => {
 
   const [inputText, setInputText] = useState("");
-
   const [msgs, setMsgs] = useState([]);
 
   const chatbodyRef = useRef();
@@ -50,7 +48,7 @@ const PopDiv = ({ setPop }, { pop }) => {
 
   return (
     <div className="BotWindow" style={{ display: pop ? "none" : null }}>
-      <HighlightOffIcon className="closeIcon" onClick={() => setPop(true)} />
+      <HighlightOffIcon className="closeIcon" onClick={() => setPop(false)} />
       <BotHeader />
       <div className="chatArea">
         <img src={avatar} className="avatar" alt="avatar" />

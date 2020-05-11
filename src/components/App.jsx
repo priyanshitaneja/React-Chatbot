@@ -6,16 +6,19 @@ import "../data/styles/common.scss";
 function App() {
   const [pop, setPop] = useState(false);
 
-  function popUp() {
-    setPop(prevValue => {
-      return !prevValue;
-    });
-  }
-
   return (
     <div className="chatbotContainer">
-      <img src={botlogo} alt="bot logo" className="botlogo" onClick={popUp} />
-      {pop ? <PopDiv setPop= { setPop } pop= { pop } /> : null}
+      <img
+        src={botlogo}
+        alt="bot logo"
+        className="botlogo"
+        onClick={() => {
+          setPop((prevValue) => {
+            return !prevValue;
+          });
+        }}
+      />
+      {pop ? <PopDiv setPop={setPop} pop={pop} /> : null}
     </div>
   );
 }
