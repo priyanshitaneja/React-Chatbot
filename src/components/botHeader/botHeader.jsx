@@ -6,19 +6,18 @@ import "./index.scss";
 import { avatar } from "../../data/assets/images/index.js";
 import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecord";
 
-function BotHeader(props) {
-
+const BotHeader = (props) => {
   return (
     <div className="botHeader">
-        <img src={avatar} className="avatarIcon" alt="Avatar Icon"></img>
-        <div>
-          <p className="headerText">Chatbot P.T</p>
-          <p className="onlineStatus">
-            <FiberManualRecordIcon className="onlineIcon" />
-            Online
-          </p>
-        </div>
+      <img src={avatar} className="avatarIcon" alt="Avatar Icon"></img>
+      <div>
+        <p className="headerText">Chatbot P.T</p>
+        <p className="onlineStatus">
+          <FiberManualRecordIcon className="onlineIcon" />
+          Online
+        </p>
       </div>
+    </div>
   );
-}
+};
 export default BotHeader;

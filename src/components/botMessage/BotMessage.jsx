@@ -15,8 +15,7 @@ const BotMessage = (item) => {
           </p>
         </div>
       )
-      }
-      )
+    })
   )
 }
 
