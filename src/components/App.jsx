@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import botlogo from "../images/botlogo.jpg";
+import botlogo from "../data/assets/images/botlogo.jpg";
 import PopDiv from "./popDiv/popDiv";
 import "../data/styles/common.scss";
 

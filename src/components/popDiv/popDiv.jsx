@@ -27,7 +27,7 @@ function PopDiv() {
   };
   //scrollToBottom function
 
-  useEffect(scrollToBottom, [msgs]);
+  useEffect(() => {scrollToBottom()}, [msgs]);
   //used the useEffect hook so that the scrollToBottom is called after every new msg is sent
 
   const handleChange = (event) => {
@@ -53,6 +53,7 @@ function PopDiv() {
     ) {
       // console.log("enter pressed");
       handleSend();
+      // scrollToBottom();
     }
   };
 
@@ -76,8 +77,6 @@ function PopDiv() {
           onClick={() => setClose(true)}
         />
       </div>
-
-      {/* <BotHeader /> */}
 
       <div className="chatArea">
         <img
@@ -116,7 +115,6 @@ function PopDiv() {
           Send
         </button>
       </div>
-      {/* { close ? null : <PopDiv />}  */}
     </div>
   );
 }
