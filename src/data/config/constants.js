@@ -9,4 +9,4 @@ export const botMessage = [
     { id: 8, text: "How can I help you today?" },
     { id: 9, text: "Hi, I am your virtual help bot." },
     { id: 10, text: "How can I help you today?" }
-  ];
+];

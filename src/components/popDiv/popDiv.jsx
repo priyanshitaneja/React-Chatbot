@@ -3,6 +3,8 @@ import React, { useState, useEffect, useRef } from "react";
 import "../../data/styles/common.scss";
 import "./index.scss";
 
+import { avatar } from "../../data/assets/images/index.js";
+
 import UserMsg from "../userMsg/userMsg";
 
 import HighlightOffIcon from "@material-ui/icons/HighlightOff";
@@ -10,27 +12,18 @@ import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecord";
 
 import { botMessage } from "../../data/config/constants";
 
-function PopDiv() {
+const PopDiv = () => {
   const [close, setClose] = useState(false);
 
-  //saving the text of input area
   const [inputText, setInputText] = useState("");
 
-  //for messages the user sends
   const [msgs, setMsgs] = useState([]);
 
   const chatbodyRef = useRef();
-  //reference created
-
-  // const scrollToBottom = () => {
-  //   chatbodyRef.current.scrollIntoView({ behavior: "smooth" });
-  // };
-  //scrollToBottom function
 
   useEffect(() => {
     chatbodyRef.current.scrollIntoView({ behavior: "smooth" });
   }, [msgs]);
-  //used the useEffect hook so that the scrollToBottom is called after every new msg is sent
 
   const handleChange = (event) => {
     const newValue = event.target.value;
@@ -43,7 +36,6 @@ function PopDiv() {
         return [...prevMsg, inputText];
       });
       setInputText("");
-      // scrollToBottom();
     }
   };
 
@@ -53,9 +45,7 @@ function PopDiv() {
       inputText.trim() !== "" &&
       inputText.trim() !== null
     ) {
-      // console.log("enter pressed");
       handleSend();
-      // scrollToBottom();
     }
   };
 
@@ -63,7 +53,7 @@ function PopDiv() {
     <div className="BotWindow" style={{ display: close ? "none" : null }}>
       <div className="botHeader">
         <img
-          src={require("../../data/assets/images/avatar.jpg")}
+          src={avatar}
           className="avatarIcon"
           alt="Avatar Icon"
         ></img>
@@ -79,10 +69,9 @@ function PopDiv() {
           onClick={() => setClose(true)}
         />
       </div>
-
       <div className="chatArea">
         <img
-          src={require("../../data/assets/images/avatar.jpg")}
+          src={avatar}
           className="avatar"
           alt="avatar"
         />
@@ -95,15 +84,11 @@ function PopDiv() {
             </div>
           );
         })}
-        ;
-        {msgs.map((item, index) => {
-          return <UserMsg text={item} key={index} />;
-        })}
-        ;
+        {msgs.map((item, index) => (
+          <UserMsg text={item} key={index} />
+        ))}
         <div ref={chatbodyRef} />
-        {/* Scroll to bottom Reference  */}
       </div>
-
       <div className="inputArea">
         <input
           className="popUpInput"
@@ -119,6 +104,6 @@ function PopDiv() {
       </div>
     </div>
   );
-}
+};
 
 export default PopDiv;
