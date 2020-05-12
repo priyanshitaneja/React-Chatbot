@@ -4,6 +4,7 @@ import "../../data/styles/common.scss";
 import "./index.scss";
 
 import { avatar } from "../../data/assets/images/index.js";
+import { botReplys } from "../../data/config/constants";
 
 import UserMsg from "../userMsg/userMsg";
 import BotMessage from "../botMessage/BotMessage";
@@ -49,6 +50,17 @@ const PopDiv = ({ setPop }, { pop }) => {
     }
   };
 
+  const botReply = () => {
+    const i = parseInt(Math.random()*15);
+    const reply = botReplys[i].text;
+    return (
+      console.log(reply)
+        // <p className="popUpInput">
+        //   {reply}
+        // </p>
+    );
+  };
+
   const handleEnter = (event) => {
     if (
       event.key === "Enter" &&
@@ -56,6 +68,7 @@ const PopDiv = ({ setPop }, { pop }) => {
       inputText.trim() !== null
     ) {
       handleSend();
+      botReply();
     }
   };
 
@@ -67,7 +80,7 @@ const PopDiv = ({ setPop }, { pop }) => {
         <img src={avatar} className="avatar" alt="avatar" />
         <BotMessage />
         {msgs.map((item, index) => (
-          <UserMsg text={item} key={index} />
+          <UserMsg text={item} key={index} sender="customer" />
         ))}
         <div ref={chatAreaRef} />
       </div>
