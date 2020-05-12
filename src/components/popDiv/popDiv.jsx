@@ -73,6 +73,13 @@ const PopDiv = ({ setPop }, { pop }) => {
     }
   };
 
+  // const userMsgId = () => {
+  //   return (
+  //     new Date().valueOf()
+  //   );
+  //   // console.log(new Date().valueOf());
+  // };
+
   return (
     <div className="BotWindow" style={{ display: pop ? "none" : null }}>
       <HighlightOffIcon className="closeIcon" onClick={() => setPop(false)} />
