@@ -11,16 +11,29 @@ import BotHeader from "../botHeader/BotHeader";
 
 import HighlightOffIcon from "@material-ui/icons/HighlightOff";
 
-const PopDiv = ({ setPop } , { pop }) => {
+const PopDiv = ({ setPop }, { pop }) => {
+
+  const hasMounted = useRef(false);
+  const chatAreaRef = useRef();
+  // const chatbodyRef = useRef();
 
   const [inputText, setInputText] = useState("");
   const [msgs, setMsgs] = useState([]);
 
-  const chatbodyRef = useRef();
+  useEffect(() => {
+    chatAreaRef.current.scrollTop = chatAreaRef.current.scrollHeight
+  }, [])
+
+  const scrollToBottom = () => {
+    chatAreaRef.current.scrollIntoView({ behavior: "smooth" })
+  }
 
   useEffect(() => {
-    chatbodyRef.current.scrollIntoView({ behavior: "smooth" });
-  }, [msgs]);
+    if (!hasMounted.current)
+      hasMounted.current = true
+    else
+      scrollToBottom()
+  }, [msgs])
 
   const handleChange = (event) => {
     const newValue = event.target.value;
@@ -56,7 +69,7 @@ const PopDiv = ({ setPop } , { pop }) => {
         {msgs.map((item, index) => (
           <UserMsg text={item} key={index} />
         ))}
-        <div ref={chatbodyRef} />
+        <div ref={chatAreaRef} />
       </div>
       <div className="inputArea">
         <input
