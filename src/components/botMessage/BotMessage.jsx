@@ -5,7 +5,7 @@ import { botMessages } from "../../data/config/constants";
 import "./index.scss";
 import "../../data/styles/common.scss";
 
-const BotMessage = (item) => {
+const BotMessage = () => {
   return (
     botMessages.map((item) => {
       return (

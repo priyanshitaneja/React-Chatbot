@@ -51,13 +51,13 @@ const PopDiv = ({ setPop }, { pop }) => {
   };
 
   const botReply = () => {
-    const i = parseInt(Math.random()*15);
+    const i = parseInt(Math.random() * 15);
     const reply = botReplys[i].text;
     return (
-      console.log(reply)
-        // <p className="popUpInput">
-        //   {reply}
-        // </p>
+      // console.log(reply)
+      <p className="popUpInput">
+        {reply}
+      </p>
     );
   };
 
@@ -68,6 +68,7 @@ const PopDiv = ({ setPop }, { pop }) => {
       inputText.trim() !== null
     ) {
       handleSend();
+      // setTimeout(botReply(),100);
       botReply();
     }
   };
@@ -80,8 +81,14 @@ const PopDiv = ({ setPop }, { pop }) => {
         <img src={avatar} className="avatar" alt="avatar" />
         <BotMessage />
         {msgs.map((item, index) => (
-          <UserMsg text={item} key={index} sender="customer" />
-        ))}
+          <UserMsg
+            text={item}
+            key={index}
+            sender="customer"
+            id={new Date().valueOf()}
+          />
+        ))
+        }
         <div ref={chatAreaRef} />
       </div>
       <div className="inputArea">

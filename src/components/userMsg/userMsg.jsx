@@ -5,10 +5,10 @@ import "./index.scss";
 const UserMsg = (props) => {
   return (
     <div>
-      <p className="popUpMsg userMsg">          
+      <p className="popUpMsg userMsg" >          
           {props.text}
       </p>
-    </div>    
+    </div>   
   );
 }
 
