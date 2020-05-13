@@ -5,6 +5,13 @@ import PopDiv from "./popDiv/popDiv";
 import "../data/styles/common.scss";
 
 const App = () => {
+
+  const handleBotClick = () => {
+      setPop((prevValue) => {
+        return !prevValue;
+      });
+  }
+
   const [pop, setPop] = useState(false);
   return (
     <div className="chatbotContainer">
@@ -12,11 +19,7 @@ const App = () => {
         src={botlogo}
         alt="bot logo"
         className="botlogo"
-        onClick={() => {
-          setPop((prevValue) => {
-            return !prevValue;
-          });
-        }}
+        onClick={handleBotClick}
       />
       {pop ? <PopDiv setPop={setPop} pop={pop} /> : null}
     </div>
