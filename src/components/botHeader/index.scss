@@ -4,9 +4,9 @@
     box-sizing: border-box;
     padding: 12px;
     height: 65px;
-    border-bottom: 1px solid #eef5f8;
-    color: #eef5f8;
-    background-color: $bot-body;
+    border-bottom: 1px solid $secondary;
+    color: $font-primary;
+    background-color: $bg-primary;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     display: inline-flex;

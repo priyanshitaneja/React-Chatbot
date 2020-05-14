@@ -1,23 +1,28 @@
 export const defaultMessages = [
     { id: 1, text: "Hi, Can you help me with xyz?" , sender: "bot" },
     { id: 2, text: "Hi, I am your virtual help bot." , sender: "bot" },
-    { id: 3, text: "How can I help you today?" , sender: "bot" }
+    { id: 3, text: "How can I help you today ?" , sender: "bot" }
 ];
 
 export const botReplys = [
- { text: "What is it that you are looking for?" , sender: "bot"},    
- { text: "Hi! Hope you are doing good today." , sender: "bot"},
- { text: "This is a chatbot reply!" , sender: "bot"},
- { text: "What is it that you are looking for?" , sender: "bot"},
- { text: "This is a chatbot reply!" , sender: "bot"},
- { text: "It was great talking to you." , sender: "bot"},
- { text: "Chatbot reply" , sender: "bot"},
- { text: "Chatbot P.T" , sender: "bot"},
- { text: "qwerty" , sender: "bot"},
- { text: "What is it that you are looking for?" , sender: "bot"},
- { text: "12345" , sender: "bot"},
- { text: "abcd" , sender: "bot"},
- { text: "xyz" , sender: "bot"},
- { text: "What is it that you are looking for?" , sender: "bot"},
- { text: "Hi! Hope you are doing good today." , sender: "bot"}   
+ {id: 101, text: "What is it that you are looking for?" , sender: "bot"},    
+ {id: 102, text: "Hi! Hope you are doing good today." , sender: "bot"},
+ {id: 103, text: "Do Not Disturb!" , sender: "bot"},
+ {id: 104, text: "What is it that you are looking for?" , sender: "bot"},
+ {id: 105, text: "This is a chatbot reply!" , sender: "bot"},
+ {id: 106, text: "Let me sleep." , sender: "bot"},
+ {id: 107, text: "Chatbot Offline" , sender: "bot"},
+ {id: 108, text: "I'm Chatbot P.T" , sender: "bot"},
+ {id: 109, text: "Get me some coffee, please?" , sender: "bot"},
+ {id: 110, text: "What is it that you are looking for?" , sender: "bot"},
+ {id: 111, text: "Hellllooooooooo" , sender: "bot"},
+ {id: 112, text: "I ain't your mom, find it yourself." , sender: "bot"},
+ {id: 113, text: "NOPE!" , sender: "bot"},
+ {id: 114, text: "Okay, but I'll charge a Dark Chocolate!" , sender: "bot"},
+ {id: 115, text: "Bored in a house I'm in a house bored!" , sender: "bot"}   
 ];
+
+export const sender = {
+    CUSTOMER: "customer",
+    BOT: "bot"
+};

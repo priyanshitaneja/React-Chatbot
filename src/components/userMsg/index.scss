@@ -1,17 +1,20 @@
 @import '../../data/styles/colors.scss';
 // @import '../../data/styles/styles.scss';
 
-  
-  .userMsg {
-    float: right;
-    margin-top: 0px;
-    margin-bottom: 10px;
-    background-color: $user-msg-bg;
-    color: $user-msg;
+  .rcMsgContainer {
+    display: flex;
 
-    clear: both;
-    //messages in next line irrespective of width
-    width: max-content;
-    //messages dynamic according to size of content
+    .bubble{
+      color: #fff;
+      max-width: 95%;
+      font-size: 14px;
+    }
+
+    .avatar {
+      width: 40px;
+      height: 40px;
+      padding: 3px 5px;
+      border-radius: 35px;
+  }
   }
   
