@@ -75,12 +75,13 @@ const PopDiv = ({ setPop }, { pop }) => {
       <HighlightOffIcon className="closeIcon" onClick={() => setPop(false)} />
       <BotHeader />
       <div className="chatArea" ref={chatbodyRef} >
-        {msgs.map((item, index) => (
+        {
+          msgs.map((item, index) => (
           <UserMsg
             message={item}
             key={index}
           />
-        ))
+          ))
         }
         <div ref={chatAreaRef} />
       </div>
