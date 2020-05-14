@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from "react";
 import "../../data/styles/common.scss";
 import "./index.scss";
 
-import { defaultMessages , botReplys , sender } from "../../data/config/constants";
+import { defaultMessages, botReplys, sender } from "../../data/config/constants";
 
 import UserMsg from "../userMsg/userMsg";
 import BotHeader from "../botHeader/botHeader";
@@ -15,6 +15,7 @@ const PopDiv = ({ setPop }, { pop }) => {
   const hasMounted = useRef(false);
   const chatAreaRef = useRef();
   const chatbodyRef = useRef();
+  const timer = useRef(null);
 
   const [inputText, setInputText] = useState("");
   const [msgs, setMsgs] = useState(defaultMessages);
@@ -28,12 +29,17 @@ const PopDiv = ({ setPop }, { pop }) => {
   }
 
   useEffect(() => {
-    if(msgs[msgs.length - 1].sender === sender.CUSTOMER) {
-      const index = parseInt(Math.random() * 15);
-      console.log(index);
-      setMsgs((prevMsg) => {
-        return [...prevMsg, botReplys[index]];
-      });
+    if (msgs[msgs.length - 1].sender === sender.CUSTOMER) {
+      if (timer.current)
+        clearInterval(timer.current)
+      const timeout = setTimeout(() => {
+        const index = parseInt(Math.random() * 15);
+        console.log(index);
+        setMsgs((prevMsg) => {
+          return [...prevMsg, botReplys[index]];
+        });
+      }, 1500);
+      timer.current = timeout;
     }
     if (!hasMounted.current)
       hasMounted.current = true
@@ -48,7 +54,7 @@ const PopDiv = ({ setPop }, { pop }) => {
 
   const handleSend = () => {
     if (inputText.trim() !== "" && inputText.trim() !== null) {
-      const userMsgObj = { 
+      const userMsgObj = {
         id: new Date().valueOf(),
         text: inputText,
         sender: "customer"
@@ -77,10 +83,10 @@ const PopDiv = ({ setPop }, { pop }) => {
       <div className="chatArea" ref={chatbodyRef} >
         {
           msgs.map((item, index) => (
-          <UserMsg
-            message={item}
-            key={index}
-          />
+            <UserMsg
+              message={item}
+              key={index}
+            />
           ))
         }
         <div ref={chatAreaRef} />
