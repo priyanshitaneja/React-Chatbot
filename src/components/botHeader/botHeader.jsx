@@ -1,12 +1,13 @@
+import { avatar } from "../../data/assets/images/index.js";
+
 import React from "react";
 
 import "../../data/styles/common.scss";
 import "./index.scss";
 
-import { avatar } from "../../data/assets/images/index.js";
 import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecord";
 
-const BotHeader = (props) => {
+const BotHeader = () => {
   return (
     <div className="botHeader">
       <img src={avatar} className="avatarIcon" alt="Avatar Icon"></img>

@@ -1,16 +1,16 @@
+import { botReplys, sender } from "../../data/config/constants";
+
 import React, { useState, useEffect, useRef } from "react";
 
 import "../../data/styles/common.scss";
 import "./index.scss";
-
-import { defaultMessages, botReplys, sender } from "../../data/config/constants";
 
 import UserMsg from "../userMsg/userMsg";
 import BotHeader from "../botHeader/botHeader";
 
 import HighlightOffIcon from "@material-ui/icons/HighlightOff";
 
-const PopDiv = ({ setPop }, { pop }) => {
+const PopDiv = ({ setPop , msgs, setMsgs ,updatedMsgs}) => {
 
   const hasMounted = useRef(false);
   const chatAreaRef = useRef();
@@ -18,7 +18,6 @@ const PopDiv = ({ setPop }, { pop }) => {
   const timer = useRef(null);
 
   const [inputText, setInputText] = useState("");
-  const [msgs, setMsgs] = useState(defaultMessages);
 
   useEffect(() => {
     chatbodyRef.current.scrollTop = chatbodyRef.current.scrollHeight
@@ -29,22 +28,23 @@ const PopDiv = ({ setPop }, { pop }) => {
   }
 
   useEffect(() => {
-    if (msgs[msgs.length - 1].sender === sender.CUSTOMER) {
-      if (timer.current)
-        clearInterval(timer.current)
-      const timeout = setTimeout(() => {
-        const index = parseInt(Math.random() * 15);
-        console.log(index);
-        setMsgs((prevMsg) => {
-          return [...prevMsg, botReplys[index]];
-        });
-      }, 1500);
-      timer.current = timeout;
-    }
     if (!hasMounted.current)
       hasMounted.current = true
-    else
-      scrollToBottom()
+    else {
+      if (msgs[msgs.length - 1].sender === sender.CUSTOMER) {
+        if (timer.current)
+          clearInterval(timer.current)
+        const timeout = setTimeout(() => {
+          const index = parseInt(Math.random() * 15);
+          console.log(index);
+          setMsgs((prevMsg) => {
+            return [...prevMsg, botReplys[index]];
+          });
+        }, 1500);
+        timer.current = timeout;
+      }
+    }
+    scrollToBottom()
   }, [msgs])
 
   const handleChange = (event) => {
@@ -59,9 +59,10 @@ const PopDiv = ({ setPop }, { pop }) => {
         text: inputText,
         sender: "customer"
       }
-      setMsgs((prevMsg) => {
-        return [...prevMsg, userMsgObj];
-      });
+      // setMsgs((prevMsg) => {
+      //   return [...prevMsg, userMsgObj];
+      // });
+      updatedMsgs(userMsgObj);
       setInputText("");
     }
   };
@@ -77,7 +78,8 @@ const PopDiv = ({ setPop }, { pop }) => {
   };
 
   return (
-    <div className="BotWindow" style={{ display: pop ? "none" : null }}>
+    <div className="BotWindow"     >
+    {/* style={{ display: pop ? "none" : null }} */}
       <HighlightOffIcon className="closeIcon" onClick={() => setPop(false)} />
       <BotHeader />
       <div className="chatArea" ref={chatbodyRef} >
