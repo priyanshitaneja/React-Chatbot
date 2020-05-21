@@ -45,7 +45,7 @@ const PopDiv = ({ setPop , msgs, setMsgs ,updatedMsgs}) => {
       }
     }
     scrollToBottom()
-  }, [msgs])
+  }, [msgs]);
 
   const handleChange = (event) => {
     const newValue = event.target.value;
@@ -78,8 +78,7 @@ const PopDiv = ({ setPop , msgs, setMsgs ,updatedMsgs}) => {
   };
 
   return (
-    <div className="BotWindow"     >
-    {/* style={{ display: pop ? "none" : null }} */}
+    <div className="BotWindow">
       <HighlightOffIcon className="closeIcon" onClick={() => setPop(false)} />
       <BotHeader />
       <div className="chatArea" ref={chatbodyRef} >
@@ -88,8 +87,10 @@ const PopDiv = ({ setPop , msgs, setMsgs ,updatedMsgs}) => {
             <UserMsg
               message={item}
               key={index}
-            />
-          ))
+              prevIndex={index === 0 ? null : {index}-1}
+              // prevSender= {index !== 0 ? msgs[{index}-1].sender : "null"}
+            />        
+        ))
         }
         <div ref={chatAreaRef} />
       </div>

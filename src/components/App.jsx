@@ -29,7 +29,7 @@ const App = () => {
         className="botlogo"
         onClick={handleBotClick}
       />
-      {pop ? <PopDiv msgs={msgs} setMsgs={setMsgs} setPop={setPop} pop={pop} updatedMsgs={updatedMsgs} /> : null}
+      {pop ? <PopDiv msgs={msgs} setMsgs={setMsgs} setPop={setPop} updatedMsgs={updatedMsgs} /> : null}
     </div>
   );
 }

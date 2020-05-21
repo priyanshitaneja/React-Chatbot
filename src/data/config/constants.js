@@ -1,7 +1,7 @@
 export const defaultMessages = [
     { id: 1, text: "Hi!" , sender: "bot" },
-    { id: 2, text: "I am your virtual help bot." , sender: "customer" },
-    { id: 3, text: "How can I help you today ?" , sender: "bot" }
+    { id: 2, text: "I am your virtual help bot." , sender: "bot" },
+    { id: 3, text: "How can I help you today ?" , sender: "customer" }
 ];
 
 export const botReplys = [
