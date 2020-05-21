@@ -10,7 +10,7 @@ import BotHeader from "../botHeader/botHeader";
 
 import HighlightOffIcon from "@material-ui/icons/HighlightOff";
 
-const PopDiv = ({ setPop , msgs, setMsgs ,updatedMsgs}) => {
+const SetChatbot = ({ setChatbot , msgs, setMsgs ,updatedMsgs}) => {
 
   const hasMounted = useRef(false);
   const chatAreaRef = useRef();
@@ -36,7 +36,7 @@ const PopDiv = ({ setPop , msgs, setMsgs ,updatedMsgs}) => {
           clearInterval(timer.current)
         const timeout = setTimeout(() => {
           const index = parseInt(Math.random() * 15);
-          console.log(index);
+          // console.log(index);
           setMsgs((prevMsg) => {
             return [...prevMsg, botReplys[index]];
           });
@@ -59,9 +59,6 @@ const PopDiv = ({ setPop , msgs, setMsgs ,updatedMsgs}) => {
         text: inputText,
         sender: "customer"
       }
-      // setMsgs((prevMsg) => {
-      //   return [...prevMsg, userMsgObj];
-      // });
       updatedMsgs(userMsgObj);
       setInputText("");
     }
@@ -79,7 +76,7 @@ const PopDiv = ({ setPop , msgs, setMsgs ,updatedMsgs}) => {
 
   return (
     <div className="BotWindow">
-      <HighlightOffIcon className="closeIcon" onClick={() => setPop(false)} />
+      <HighlightOffIcon className="closeIcon" onClick={() => setChatbot(false)} />
       <BotHeader />
       <div className="chatArea" ref={chatbodyRef} >
         {
@@ -90,7 +87,7 @@ const PopDiv = ({ setPop , msgs, setMsgs ,updatedMsgs}) => {
               message={msg}
               key={index}
               showAvatar={isFirst}
-            />  
+              />  
             )
           })
         }
@@ -113,4 +110,4 @@ const PopDiv = ({ setPop , msgs, setMsgs ,updatedMsgs}) => {
   );
 };
 
-export default PopDiv;
+export default SetChatbot;

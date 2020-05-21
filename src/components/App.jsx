@@ -2,23 +2,23 @@ import React, { useState } from "react";
 import { defaultMessages } from "../data/config/constants";
 
 import botlogo from "../data/assets/images/botlogo.jpg";
-import PopDiv from "./popDiv/popDiv";
+import SetChatbot from "./setChatbot/setChatbot";
 import "../data/styles/common.scss";
 
 const App = () => {
-  const [pop, setPop] = useState(false);
+  const [chatbot, setChatbot] = useState(false);
   const [msgs, setMsgs] = useState(defaultMessages);
 
   const handleBotClick = () => {
-      setPop((prevValue) => {
-        return !prevValue;
-      });
+    setChatbot((prevValue) => {
+      return !prevValue;
+    });
   }
 
   const updatedMsgs = (msg) => {
     setMsgs((prevMsg) => {
-            return [...prevMsg , msg]
-          })
+      return [...prevMsg, msg]
+    })
   };
 
   return (
@@ -29,7 +29,7 @@ const App = () => {
         className="botlogo"
         onClick={handleBotClick}
       />
-      {pop ? <PopDiv msgs={msgs} setMsgs={setMsgs} setPop={setPop} updatedMsgs={updatedMsgs} /> : null}
+      {chatbot ? <SetChatbot msgs={msgs} setMsgs={setMsgs} setChatbot={setChatbot} updatedMsgs={updatedMsgs} /> : null}
     </div>
   );
 }
