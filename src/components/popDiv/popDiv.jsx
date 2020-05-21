@@ -83,14 +83,16 @@ const PopDiv = ({ setPop , msgs, setMsgs ,updatedMsgs}) => {
       <BotHeader />
       <div className="chatArea" ref={chatbodyRef} >
         {
-          msgs.map((item, index) => (
-            <UserMsg
-              message={item}
+          msgs.map((msg, index) => {
+            const isFirst = (index === 0) || (index > 0 && msgs[index-1].sender !== msg.sender)
+            return (
+              <UserMsg
+              message={msg}
               key={index}
-              prevIndex={index === 0 ? null : {index}-1}
-              // prevSender= {index !== 0 ? msgs[{index}-1].sender : "null"}
-            />        
-        ))
+              showAvatar={isFirst}
+            />  
+            )
+          })
         }
         <div ref={chatAreaRef} />
       </div>
