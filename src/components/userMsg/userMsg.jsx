@@ -10,7 +10,7 @@ const UserMsg = ({ message, showAvatar }) => {
   return (
     <div className={`rc-relative display-flex rc-m-10 rcMsgContainer ${message.sender === sender.CUSTOMER ? "rc-jc-fe rc-p-l-50 " : "rc-jc-fs rc-p-r-50 "}`}>
       <img
-        src={showAvatar && (message.sender === sender.CUSTOMER ? customerAvatar : avatar)}
+        src={showAvatar ? (message.sender === sender.CUSTOMER ? customerAvatar : avatar) : null}
         className={`avatar rc-absolute ${message.sender === sender.CUSTOMER ? "rc-align-r" : ""}`}
         alt=""
       />
