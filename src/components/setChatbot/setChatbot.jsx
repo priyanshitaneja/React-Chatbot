@@ -10,16 +10,15 @@ import BotHeader from "../botHeader/botHeader";
 
 import HighlightOffIcon from "@material-ui/icons/HighlightOff";
 
-var _ = require('lodash');
-
 const SetChatbot = ({ setChatbot , msgs, setMsgs, updatedMsgs}) => {
 
   const hasMounted = useRef(false);
   const chatAreaRef = useRef();
   const chatbodyRef = useRef();
   const timer = useRef(null);
+  const inputRef = useRef();
 
-  const [inputText, setInputText] = useState("");
+  // const [inputText, setInputText] = useState("");
 
   useEffect(() => {
     chatbodyRef.current.scrollTop = chatbodyRef.current.scrollHeight
@@ -47,48 +46,32 @@ const SetChatbot = ({ setChatbot , msgs, setMsgs, updatedMsgs}) => {
       }
     }
     scrollToBottom()
-  }, [msgs]);
+  }, [msgs])
 
-  const handleChange = (event) => {
-
-    event.persist();
-
-    let debouncedFn =  _.debounce(() => {
-      let newValue = event.target.value;
-      setInputText(newValue);
-    }, 300);
-    
-    if (!debouncedFn) {
-      debouncedFn();
-    }
-    debouncedFn();
-
-    // const newValue = event.target.value;
-    // console.log(newValue);
-    // setInputText(newValue);
-  };
+  const handleChange = event => {
+    const newValue = event.target.value
+    inputRef.current.value=newValue
+  }
 
   const handleSend = () => {
-    if (inputText.trim() !== "" && inputText.trim() !== null) {
-      const userMsgObj = {
-        id: new Date().valueOf(),
-        text: inputText,
-        sender: "customer"
+    if(inputRef.current.value) {
+      const inputText = inputRef.current.value.trim()
+      if (inputText.length > 0) {
+        const userMsgObj = {
+          id: new Date().valueOf(),
+          text: inputText,
+          sender: "customer"
+        }
+        updatedMsgs(userMsgObj)
+        inputRef.current.value = ""
       }
-      updatedMsgs(userMsgObj);
-      setInputText("");
     }
-  };
+  }
 
-  const handleEnter = (event) => {
-    if (
-      event.key === "Enter" &&
-      inputText.trim() !== "" &&
-      inputText.trim() !== null
-    ) {
-      handleSend();
-    }
-  };
+  const handleEnter = event => {
+    if (event.key === "Enter")
+      handleSend()
+  }
 
   return (
     <div className="BotWindow">
@@ -114,7 +97,7 @@ const SetChatbot = ({ setChatbot , msgs, setMsgs, updatedMsgs}) => {
           className="popUpInput"
           type="text"
           placeholder="Send your query here..."
-          value={inputText}
+          ref={inputRef}
           onChange={handleChange}
           onKeyPress={handleEnter}
         />
