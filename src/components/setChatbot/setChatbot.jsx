@@ -55,7 +55,7 @@ const SetChatbot = ({ setChatbot , msgs, setMsgs, updatedMsgs}) => {
 
     let debouncedFn =  _.debounce(() => {
       let newValue = event.target.value;
-         setInputText(newValue);
+      setInputText(newValue);
     }, 300);
     
     if (!debouncedFn) {
