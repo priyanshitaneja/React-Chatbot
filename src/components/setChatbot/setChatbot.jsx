@@ -10,7 +10,9 @@ import BotHeader from "../botHeader/botHeader";
 
 import HighlightOffIcon from "@material-ui/icons/HighlightOff";
 
-const SetChatbot = ({ setChatbot , msgs, setMsgs ,updatedMsgs}) => {
+var _ = require('lodash');
+
+const SetChatbot = ({ setChatbot , msgs, setMsgs, updatedMsgs}) => {
 
   const hasMounted = useRef(false);
   const chatAreaRef = useRef();
@@ -48,8 +50,22 @@ const SetChatbot = ({ setChatbot , msgs, setMsgs ,updatedMsgs}) => {
   }, [msgs]);
 
   const handleChange = (event) => {
-    const newValue = event.target.value;
-    setInputText(newValue);
+
+    event.persist();
+
+    let debouncedFn =  _.debounce(() => {
+      let newValue = event.target.value;
+         setInputText(newValue);
+    }, 300);
+    
+    if (!debouncedFn) {
+      debouncedFn();
+    }
+    debouncedFn();
+
+    // const newValue = event.target.value;
+    // console.log(newValue);
+    // setInputText(newValue);
   };
 
   const handleSend = () => {
