@@ -1,0 +1,79 @@
+@import "./colors.scss";
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Roboto, sans-serif !important;
+  letter-spacing: 1px;
+}
+
+.rc-relative {
+  position: relative;
+}
+
+.rc-absolute {
+  position: absolute;
+}
+
+.rc-p-10 {
+  padding: 15px;
+}
+
+.rc-word-wrap {
+  overflow: hidden;
+  word-wrap: break-word;
+}
+
+.rc-m-10 {
+  margin: 10px 0;
+}
+
+.rc-p-l-50 {
+  padding-left: 50px;
+}
+
+.rc-p-r-50 {
+  padding-right: 50px;
+}
+
+.rc-m-l-50 {
+  margin-left: 50px;
+}
+
+.rc-m-r-50 {
+  margin-right: 50px;
+}
+
+.rc-br-10 {
+  border-radius: 10px;
+}
+
+.chat-bg-primary {
+  background-color: $bg-primary;
+}
+
+.chat-bg-sec {
+  background-color: $bg-secondary;
+}
+
+.display-flex {
+  display: flex;
+  flex-direction: row;
+}
+
+.rc-jc-fe {
+  justify-content: flex-end;
+}
+
+.rc-jc-fs {
+  justify-content: flex-start;
+}
+
+.rc-align-r {
+  align-items: flex-end;
+}
+
+.rc-align-l {
+  align-items: flex-start;
+}
