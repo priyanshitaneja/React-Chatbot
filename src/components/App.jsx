@@ -20,7 +20,7 @@ const App = () => {
       return [...prevMsg, msg]
     })
   };
-  // console.log("App rendered");
+  
   return (
     <div className="chatbotContainer">
       <img

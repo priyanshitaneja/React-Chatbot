@@ -1,6 +1,6 @@
 import { botReplys, sender } from "../../data/config/constants";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 
 import "../../data/styles/common.scss";
 import "./index.scss";
@@ -17,8 +17,6 @@ const SetChatbot = ({ setChatbot , msgs, setMsgs, updatedMsgs}) => {
   const chatbodyRef = useRef();
   const timer = useRef(null);
   const inputRef = useRef();
-
-  // const [inputText, setInputText] = useState("");
 
   useEffect(() => {
     chatbodyRef.current.scrollTop = chatbodyRef.current.scrollHeight
@@ -37,7 +35,6 @@ const SetChatbot = ({ setChatbot , msgs, setMsgs, updatedMsgs}) => {
           clearInterval(timer.current)
         const timeout = setTimeout(() => {
           const index = parseInt(Math.random() * 15);
-          // console.log(index);
           setMsgs((prevMsg) => {
             return [...prevMsg, botReplys[index]];
           });
